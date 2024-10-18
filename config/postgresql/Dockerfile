@@ -6,7 +6,7 @@ ENV POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 ENV POSTGRES_DB=${POSTGRES_DB}
 
 # Открываем порт для PostgreSQL (стандартный порт 5432)
-EXPOSE 5432
+EXPOSE ${POSTGRES_PORT}
 
 # Команда для запуска PostgreSQL-сервера
 CMD ["postgres"]
