@@ -9,6 +9,7 @@ import {
   Patch,
   Post,
   Query,
+  UseInterceptors,
 } from '@nestjs/common';
 import { ClientService } from './client.service';
 import { GetClientsParamsDTO } from './dto/GetClientsParamsDTO';
@@ -16,7 +17,9 @@ import { CreateClientRequestDTO } from './dto/CreateClientRequestDTO';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CreateClientResponseDTO } from './dto/CreateClientResponseDTO';
 import { UpdateClientRequestDTO } from './dto/UpdateClientRequestDTO';
+import { LoggingInterceptor } from '../logger/logger.interceptor';
 
+@UseInterceptors(LoggingInterceptor)
 @ApiTags('client')
 @ApiResponse({
   status: HttpStatus.BAD_REQUEST,
