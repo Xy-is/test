@@ -4,7 +4,7 @@ import * as path from 'path';
 
 @Injectable()
 export class Logger implements LoggerService {
-  private readonly logsDir: string = path.join(__dirname, '..', 'logs');
+  private readonly logsDir: string = path.join(process.cwd(), 'logs');
   private readonly logsPath: string = path.join(this.logsDir, 'logs.log');
   private readonly errorLogsPath: string = path.join(
     this.logsDir,

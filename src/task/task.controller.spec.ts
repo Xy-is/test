@@ -4,7 +4,7 @@ import { TaskService } from './task.service';
 import { CreateTaskRequestDTO } from './dto/CreateTaskRequestDTO';
 import { UpdateTaskRequestDTO } from './dto/UpdateTaskRequestDTO';
 import { GetTasksParamsDTO } from './dto/GetTasksPatamsDTO';
-import { TaskStatusEnum } from './enums/TaskStatusEnum';
+import { TaskStatusEnum } from './enums/taskStatusEnum';
 
 describe('TaskController', () => {
   let controller: TaskController;

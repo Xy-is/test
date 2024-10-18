@@ -9,4 +9,17 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - ${POSTGRES_PORT}:5432
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+
+  app:
+    container_name: app
+    restart: always
+    build:
+      context: .
+      dockerfile: ./config/application/Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_HOST=postgres
+    ports:
+      - ${APP_PORT}:${APP_PORT}
